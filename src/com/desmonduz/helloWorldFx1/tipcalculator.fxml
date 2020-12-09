@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="com.desmonduz.helloWorldFx1.TipCalculatorController">
+    <center>
+        <GridPane
+                vgap="10"
+                hgap="10"
+        >
+            <padding>
+                <Insets right="10" left="10" bottom="10" top="10"/>
+            </padding>
+
+            <Label text="Amount" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField GridPane.hgrow="ALWAYS" fx:id="txtAmount"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="0"
+                       text="100"
+            />
+
+            <Label fx:id="lblPercentage"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="1"/>
+            <Slider fx:id="sldPercentage"
+                    max="50" min="0"
+                    majorTickUnit="10"
+                    minorTickCount="5"
+                    showTickLabels="true"
+                    showTickMarks="true"
+                    GridPane.columnIndex="1"
+                    GridPane.rowIndex="1"
+                    onMouseClicked="#handleSliderChanged"
+            >
+            </Slider>
+
+            <Label text="Tip" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="txtTip"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="2"
+                       editable="false"/>
+
+
+            <Label text="Total" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextField fx:id="txtTotal"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="3"
+                       editable="false"/>
+
+            <Label text="Num. People" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <Spinner fx:id="txtNumPeople"
+                     GridPane.columnIndex="1"
+                     GridPane.rowIndex="4"
+                     max="100"
+                     min="1"
+            />
+
+            <Label text="Each Pays" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <TextField fx:id="txtEachPays"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="5"
+                       editable="false"/>
+
+            <Button text="Calculate" GridPane.halignment="CENTER"
+                    GridPane.columnIndex="0"
+                    GridPane.rowIndex="6"
+                    GridPane.columnSpan="2"
+                    onAction="#handleCalculateTip"
+            />
+        </GridPane>
+    </center>
+</BorderPane>

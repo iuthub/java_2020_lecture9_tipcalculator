@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Font?>
+<BorderPane
+          xmlns:fx="http://javafx.com/fxml/1"
+          xmlns="http://javafx.com/javafx/11.0.1"
+          fx:controller="com.desmonduz.helloWorldFx1.helloworld.MainWindowController">
+<!--   <Label text="Hello World"-->
+<!--          style="-fx-border-color: blue;-fx-border-width: 2;"-->
+<!--   ></Label>-->
+   <padding>
+      <Insets bottom="10" right="10" left="10" top="10"></Insets>
+   </padding>
+
+   <top>
+      <Label text="Hello World 2" alignment="CENTER"></Label>
+   </top>
+
+   <left>
+      <ListView>
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Item 1"></String>
+               <String fx:value="Item 2"></String>
+               <String fx:value="Item 3"></String>
+            </FXCollections>
+         </items>
+      </ListView>
+   </left>
+   <center>
+      <VBox spacing="5">
+         <HBox alignment="CENTER" spacing="5">
+            <CheckBox text="Option 1"></CheckBox>
+            <CheckBox text="Option 2"></CheckBox>
+            <CheckBox text="Option 3"></CheckBox>
+         </HBox>
+         <HBox alignment="CENTER" spacing="5">
+            <fx:define>
+               <ToggleGroup fx:id="colorToggleGroup"></ToggleGroup>
+            </fx:define>
+
+            <RadioButton text="Option 1" toggleGroup="$colorToggleGroup"></RadioButton>
+            <RadioButton text="Option 2" toggleGroup="$colorToggleGroup"></RadioButton>
+            <RadioButton text="Option 3" toggleGroup="$colorToggleGroup"></RadioButton>
+         </HBox>
+
+         <ComboBox>
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1"></String>
+                  <String fx:value="Item 2"></String>
+                  <String fx:value="Item 3"></String>
+               </FXCollections>
+            </items>
+            <value>
+               <String fx:value="Select an item"></String>
+            </value>
+         </ComboBox>
+
+         <ImageView>
+            <image>
+               <Image url="@../bug.png"></Image>
+            </image>
+         </ImageView>
+
+         <HBox spacing="10">
+            <TextField fx:id="txtName" HBox.hgrow="ALWAYS"
+               onKeyReleased="#handleGreeting"
+            ></TextField>
+
+            <Label fx:id="lblGreeting">
+               <font>
+                  <Font name="Arial bold" size="16"></Font>
+               </font>
+            </Label>
+            <Button text="Greet" onAction="#handleGreeting"></Button>
+         </HBox>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox spacing="10" alignment="BASELINE_RIGHT">
+         <Button text="OK"></Button>
+         <Button text="Apply"></Button>
+         <Button text="Cancel"></Button>
+      </HBox>
+   </bottom>
+
+
+</BorderPane>
